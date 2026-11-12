@@ -14,7 +14,7 @@ export default function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/files')
+    fetch('/api/files')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch file list');
         return res.json();
@@ -25,7 +25,7 @@ export default function App() {
           setSelectedFile(fileData.closest_pair[0]);
         }
       })
-      .catch(() => setError('Backend server is offline. Run "python backend.py" first.'));
+      .catch(() => setError('Backend server is unreachable.'));
   }, []);
 
   useEffect(() => {
@@ -35,8 +35,8 @@ export default function App() {
 
     const endpoint =
       problemType === 'closest_pair'
-        ? `http://127.0.0.1:8000/api/closest-pair/${selectedFile}`
-        : `http://127.0.0.1:8000/api/integer-mul/${selectedFile}`;
+        ? `/api/closest-pair/${selectedFile}`
+        : `/api/integer-mul/${selectedFile}`;
 
     fetch(endpoint)
       .then((res) => {
