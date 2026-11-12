@@ -166,11 +166,12 @@
 }
 
 .metric-card {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.6));
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(145deg, #f8fbff, #e8eff9);
+  border: 1px solid rgba(191, 208, 231, 0.9);
   border-radius: 18px;
   padding: 18px 18px 16px;
-  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.24);
+  color: #172554;
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.2);
 }
 
 .metric-label {
@@ -178,7 +179,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: #5b6b82;
   margin-bottom: 12px;
 }
 
@@ -186,15 +187,43 @@
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: 800;
   letter-spacing: -0.06em;
-  color: #f8fafc;
+  color: #172554;
 }
 
-.metric-card [data-accent='blue'] { color: #7dd3fc; }
-.metric-card [data-accent='purple'] { color: #c4b5fd; }
-.metric-card [data-accent='green'] { color: #86efac; }
+.metric-card [data-accent='blue'] { color: #1d4ed8; }
+.metric-card [data-accent='purple'] { color: #6d28d9; }
+.metric-card [data-accent='green'] { color: #15803d; }
+
+button {
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.75);
+  outline-offset: 3px;
+}
 
 .visualizer-wrap {
   display: block;
+}
+
+.karatsuba-visualizer strong {
+  color: #000;
+}
+
+.karatsuba-input-value {
+  color: #000;
+  font-weight: 700;
 }
 
 @media (max-width: 960px) {

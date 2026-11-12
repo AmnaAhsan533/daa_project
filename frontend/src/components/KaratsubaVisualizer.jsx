@@ -45,12 +45,12 @@ export default function KaratsubaVisualizer({ data, filename }) {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 360px', gap: '24px', alignItems: 'start' }}>
+    <div className="karatsuba-visualizer" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 360px', gap: '24px', alignItems: 'start' }}>
       
       {/* LEFT STAGE: KARATSUBA RECURSION STEP CARDS */}
       <div
         style={{
-          background: '#ffffff',
+          background: '#eaf0f8',
           borderRadius: '14px',
           border: '1px solid #e2e8f0',
           boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',
@@ -66,13 +66,14 @@ export default function KaratsubaVisualizer({ data, filename }) {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {/* Step 1: Split */}
-          <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #3b82f6' }}>
+          <div style={{ background: '#f3f6fb', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #3b82f6' }}>
             <div style={{ fontSize: '12px', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', marginBottom: '8px' }}>
               Step 1: Divide Inputs (at {curr?.half} digits)
             </div>
             <div style={{ ...wrapStyle, fontSize: '13.5px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div>
-                <strong>X ({curr?.x?.length} digits):</strong> {curr?.x}
+                <strong>X ({curr?.x?.length} digits):</strong>{' '}
+                <span className="karatsuba-input-value">{curr?.x}</span>
                 <div style={{ paddingLeft: '12px', color: '#1e3a8a', marginTop: '4px' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
                     <ArrowRight size={14} style={{ marginTop: '4px', flexShrink: 0 }} />
@@ -85,7 +86,8 @@ export default function KaratsubaVisualizer({ data, filename }) {
                 </div>
               </div>
               <div style={{ borderTop: '1px dashed #cbd5e1', paddingTop: '10px' }}>
-                <strong>Y ({curr?.y?.length} digits):</strong> {curr?.y}
+                <strong>Y ({curr?.y?.length} digits):</strong>{' '}
+                <span className="karatsuba-input-value">{curr?.y}</span>
                 <div style={{ paddingLeft: '12px', color: '#1e3a8a', marginTop: '4px' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
                     <ArrowRight size={14} style={{ marginTop: '4px', flexShrink: 0 }} />
@@ -101,7 +103,7 @@ export default function KaratsubaVisualizer({ data, filename }) {
           </div>
 
           {/* Step 2: 3 Sub-Products */}
-          <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #8b5cf6' }}>
+          <div style={{ background: '#f3f6fb', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #8b5cf6' }}>
             <div style={{ fontSize: '12px', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', marginBottom: '8px' }}>
               Step 2: Conquer (3 Recursive Sub-Products)
             </div>
@@ -113,7 +115,7 @@ export default function KaratsubaVisualizer({ data, filename }) {
           </div>
 
           {/* Step 3: Shift & Combine */}
-          <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #10b981' }}>
+          <div style={{ background: '#f3f6fb', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #10b981' }}>
             <div style={{ fontSize: '12px', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', marginBottom: '8px' }}>
               Step 3: Combine with Powers of 10
             </div>
@@ -143,7 +145,7 @@ export default function KaratsubaVisualizer({ data, filename }) {
         {/* Playback Card */}
         <div
           style={{
-            background: '#ffffff',
+            background: '#eaf0f8',
             borderRadius: '14px',
             border: '1px solid #e2e8f0',
             boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',

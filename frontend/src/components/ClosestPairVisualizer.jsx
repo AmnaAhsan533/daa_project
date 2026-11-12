@@ -130,7 +130,7 @@ export default function ClosestPairVisualizer({ data, filename }) {
       {/* LEFT STAGE: 2D VISUALIZATION CANVAS */}
       <div
         style={{
-          background: '#ffffff',
+          background: '#eaf0f8',
           borderRadius: '14px',
           border: '1px solid #e2e8f0',
           boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',
@@ -171,7 +171,7 @@ export default function ClosestPairVisualizer({ data, filename }) {
             height: '520px',
             borderRadius: '10px',
             border: '1px solid #e2e8f0',
-            background: '#ffffff',
+            background: '#eaf0f8',
           }}
         />
       </div>
